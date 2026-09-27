@@ -3,8 +3,13 @@
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
 
+  const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+
   export default defineConfig({
     plugins: [react()],
+    define: {
+      'import.meta.env.VITE_VERCEL_URL': JSON.stringify(vercelUrl),
+    },
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {

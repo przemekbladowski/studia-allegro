@@ -7,6 +7,7 @@ import { AccountPage } from './pages/AccountPage';
 import { CheckoutPage } from './pages/CheckoutPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { FavoritesPage } from './pages/FavoritesPage';
+import { AboutPage } from './pages/AboutPage';
 import { CartProvider } from './contexts/CartContext';
 import { SettingsProvider } from './contexts/SettingsContext';
 import { UserProvider } from './contexts/UserContext';
@@ -28,6 +29,7 @@ export default function App() {
                 <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/settings" element={<SettingsPage />} />
                 <Route path="/favorites" element={<FavoritesPage />} />
+                <Route path="/about" element={<AboutPage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </CartProvider>
