@@ -5,7 +5,8 @@
 
   const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
 
-  export default defineConfig({
+  export default defineConfig(({ mode }) => ({
+    base: mode === 'production' ? '/studia-allegro/' : '/',
     plugins: [react()],
     define: {
       'import.meta.env.VITE_VERCEL_URL': JSON.stringify(vercelUrl),
@@ -62,4 +63,4 @@
       port: 3000,
       open: true,
     },
-  });
+  }));
